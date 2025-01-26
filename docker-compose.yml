@@ -7,7 +7,8 @@ services:
     ports:
       - "3306:3306"  # ホストの3306番ポートをコンテナの3306番ポートにマッピング
     environment:
-      MYSQL_ROOT_PASSWORD: 1111  # MySQLのrootユーザーのパスワード
+      MYSQL_ROOT_PASSWORD: your_password  # MySQLのrootユーザーのパスワード
+      - MYSQL_DATABASE=user_management   #DB名
     volumes:
       - mysql-data:/var/lib/mysql  # データ永続化の設定
     restart: always  # 自動再起動設定
